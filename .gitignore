@@ -1,58 +1,38 @@
-target/
-.env
-.env.local
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
 
-# npm platform-package binaries: build artifacts of scripts/build-npm-pkg.sh
-# (the same rule as target/ above — reproducible, never committed). The two
-# hand-written JS dispatcher shims are real source and stay tracked.
-npm/@shadw/*/bin/*
-!npm/@shadw/cli/bin/*.js
-!npm/@shadw/node/bin/*.js
+# Testing
+/coverage
 
-# Browser crsqlite wasm build scratch (wa-sqlite checkout at a pinned commit,
-# sqlite amalgamation cache, node-flavored wire-proof build) -- recreated by
-# crates/hive-browser/www/sqlite/build-sqlite.sh, never committed.
-crates/hive-browser/www/sqlite/.build/
+# Next.js
+/.next/
+/out/
 
-# Ansible: real inventory/secrets are operator-local, never committed --
-# only the .example templates ship in the repo.
-ansible/inventory/hosts.ini
-ansible/inventory/group_vars/all/vault.yml
-ansible/.vault_pass
-**/.env.local
-**/.env.local.*.bak
-**/.env.*.bak
+# Production
+/build
+
+# Misc
 .DS_Store
-**/.DS_Store
-.gm/*
-!.gm/constraints.md
-!.gm/disciplines/
-.gm/disciplines/*
-!.gm/disciplines/default/
-!.gm/disciplines/default/**
-!.gm/disciplines/rs-learn_router/
-!.gm/disciplines/rs-learn_router/**
-# codeinsight/codeinsight-manifest/codeinsight-vec (matched by the
-# .gm/disciplines/* line above, with no re-include below) are a regenerable
-# per-file code-search index+embedding cache (rebuilt automatically on digest
-# mismatch, see gm-plugkit's codeinsight_rebuild) -- thousands of tiny derived
-# files, never durable discipline content.
-.gm/pw-sock-*/
-.gm/browser-profile/
-.gm/browser-profile-*/
+*.pem
 
-# Agent-tool worktree/session scratch (isolated-worktree subagents, local
-# settings) -- transient tooling state, never durable repo content.
-.claude/
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
-# agentplug-runner per-repo KV scratch (native spool host runtime state,
-# regenerated on daemon boot) -- transient tooling state, never repo content.
-.agentplug-kv/
-# agentplug-runner single-shot dispatch scratch (used when the shared
-# daemon is wedged; pure runtime state, regenerated per dispatch).
-.agentplug/
-# Local operator scratch notes that landed in the repo root (integration
-# error dumps, one-off breadcrumbs) — kept on disk, never repo content.
-/1
-/wqall
-/error.txt_*
+# Local env files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

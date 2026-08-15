@@ -1,0 +1,51 @@
+{
+  "name": "autheo-devhub-ui",
+  "version": "0.1.0",
+  "description": "autheo.dev DevHub — Green Lightning Theme UI",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.39.5",
+    "@clerk/themes": "^2.4.57",
+    "@tremor/react": "3.18.7",
+    "@workflow/web": "^4.1.13",
+    "@xyflow/react": "^12.11.2",
+    "cbor-x": "^1.6.4",
+    "clsx": "2.1.1",
+    "d3-geo": "3.1.1",
+    "express": "^5.2.1",
+    "geist": "^1.7.2",
+    "lucide-react": "0.424.0",
+    "next": "^16.2.10",
+    "next-themes": "^0.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "2.5.2",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "3.1.1",
+    "@types/node": "20.14.14",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/topojson-client": "3.1.5",
+    "autoprefixer": "10.4.20",
+    "eslint": "^9",
+    "eslint-config-next": "^16.2.10",
+    "postcss": "8.4.41",
+    "tailwindcss": "3.4.9",
+    "typescript": "5.5.4"
+  },
+  "overrides": {
+    "@tremor/react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
+  }
+}
